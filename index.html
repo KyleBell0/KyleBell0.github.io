@@ -1,17 +1,170 @@
 <!DOCTYPE html>
 <html>
 <style>
-  #title {text-align: center;}
+.center {
+    text-align: center;
+}
+#africa {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid black;
+  }
+p {
+    font-size: 20px;
+  }
+table, th, td {
+    border:2px solid black;
+    border-collapse: collapse;
+}
+td, tr {
+    text-align: center;
+    font-size: 25px;
+}
+.tbl {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bdy {
+    margin-left: 5%;
+}
+th {
+    background-color: darkgrey;
+}
+.tab {
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    margin-left: 30%;
+    margin-right: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tab button {
+    background-color: inherit;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+}
+.tab button:hover {
+    background-color: #ddd;
+}
+.tabcontent {
+    display: none;
+}
 </style>
-<h1 id="title">Central Africa</h1>
-<img src="https://www.google.com/maps/vt/data=AiHMErhfcKu6k8USblqeceIgEGU-CIjG81HF9CvjbBDy_sImt0DbcJ6laEs2NM9II0eEWe_QGHXA7w4OGPqKESp1E7Z90zHe5nWhSLsmMtXOkRgfgQZGr6KMj3ix6TAiPKEA_71g_XH5Y8g6arFEQsa6cFRDUQMtUBwnAzqu8-lpW-aaJM5QYDAzhurvSuRqd58UuN6Zovkt8jet9WQetx7hkPqAkAZd0ovfXyY5GmjzJNeC2bcDmuXc" style="width:500px;height:600px;">
-<br>
-<h2>h2</h2>
-<h3>h3</h3>
-<h4>h4</h4>
-<h5>h5</h5>
-<h6>h6</h6>
 <body>
-  <p>test</p>
+<div id="title">
+<h1 class="center">Central Africa</h1>
+<h3 class="center">By Kyle Bell</h3>
+<img id="africa" src="https://www.google.com/maps/vt/data=AiHMErhfcKu6k8USblqeceIgEGU-CIjG81HF9CvjbBDy_sImt0DbcJ6laEs2NM9II0eEWe_QGHXA7w4OGPqKESp1E7Z90zHe5nWhSLsmMtXOkRgfgQZGr6KMj3ix6TAiPKEA_71g_XH5Y8g6arFEQsa6cFRDUQMtUBwnAzqu8-lpW-aaJM5QYDAzhurvSuRqd58UuN6Zovkt8jet9WQetx7hkPqAkAZd0ovfXyY5GmjzJNeC2bcDmuXc" style="width:40%;">
+<br>
+</div>
+<div class="tab">
+    <button onclick="openTab('Ecosystem')">Ecosystem</button>
+    <button onclick="openTab('Invasive')">Invasive Species</button>
+    <button onclick="openTab('Endangered')">Endangered Species</button>
+    <button onclick="openTab('Environmental')">Environmental Issues</button>
+</div>
+<div id="Ecosystem" class="tabcontent">
+<h1 class="center">Ecosystem</h1>
+<p class="center">Central Africa consists mainly of tropical rain forests and swamps. It is located in the area along the equator in the center of Africa</p>
+<table class="tbl">
+    <tr>
+        <th style="width:50%">Plants</th>
+        <th style="width:50%">Animals</th>
+    </tr>
+    <tr>
+        <td>Mahogany</td>
+        <td>Forest Elephant</td>
+    </tr>
+    <tr>
+        <td>Ebony</td>
+        <td>Chimpanze</td>
+    </tr>
+    <tr>
+        <td>Sisal</td>
+        <td>Bonobo</td>
+    </tr>
+    <tr>
+        <td>Raffia</td>
+        <td>Mountain Gorrila</td>
+    </tr>
+    <tr>
+        <td>Rubber Tree</td>
+        <td>Leopard</td>
+    </tr>
+</table>
+<br>
+<br>
+<table class="tbl">
+    <tr>
+        <th style="width:50%">Renewable Resources</th>
+        <th style="width:50%">Non-Renewable Resources</th>
+    </tr>
+    <tr>
+        <td>Wood</td>
+        <td>Oil</td>
+    </tr>
+    <tr>
+        <td>Palm Oil</td>
+        <td>Diamond</td>
+    </tr>
+</table>
+<br>
+<br>
+<table class="tbl">
+    <tr>
+        <th>Avg. Temp. High</th>
+        <th>Avg. Temp. Low</th>
+        <th>Precipitation</th>
+        <th>Hours of Sunshine</th>
+        <th>Extreme Weather Events</th>
+    </tr>
+    <tr>
+        <td>80&#176F</td>
+        <td>60&#176F</td>
+        <td>Avg. 48in a year</td>
+        <td>~2000</td>
+        <td>Floods, Droughts, Volcanic activity</td>
+    </tr>
+</table>
+<h2 class="center">Biodiversity</h2>
+<p class="center">10,000 species - Large Biodiversity</p>
+</div>
+<div id="Invasive" class="tabcontent">
+<p>Street Name: Unknown</p>
+<p>Alias: Sericostachys scandens</p>
+<p>Hide-out: Democratic Republic of Congo</p>
+<p>Criminal on the Loose: 1990</p>
+<p>Original Loaction: Central Africa</p>
+<p>Vicitms: Gorillas</p>
+<p>Effect: Altered forest composition and suitable habitat</p>
+<p>Catching Criminal: Try to remove as much as possible and lock into one location</p>
+</div>
+<div id="Endangered" class="tabcontent">
+<p>Endangered Species: Slender-Snouted Crocodile</p>
+<p>Status: Critically Endangered</p>
+<p>Cause: Human disturbance and hunting</p>
+<p>Extinction Impact: Overpopulation of fish. Otters, Leopards, and birds would decline in population</p>
+</div>
+<div id="Environmental" class="tabcontent">
+<p>Environmental Issue: Deforestation</p>
+<p>Cause: Illegal logging</p>
+<p>Issue Management: Implementing responsible forest management models</p>
+<p>Problems with Solution: Not always able to enforce these models</p>
+<p>Issue Communication: The issue of deforestation is widely known, but deforestation specifically in the Congo doesn't get much attention</p>
+</div>
+<script>
+function openTab(tabname) {
+    var i, tabcontent
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i <tabcontent.length; i++) {
+        tabcontent[i].style.display = "none"
+    }
+    document.getElementById(tabname).style.display = "block";
+}
+</script>
 </body>
 </html>
