@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <style>
+#CAfrica {
+    font-size: 60px;
+}
 .center {
     text-align: center;
 }
@@ -46,6 +49,7 @@ th {
     padding: 10px;
     font-size: 20px;
     border: none;
+    cursor: pointer;
 }
 .tab button:hover {
     background-color: #ddd;
@@ -53,11 +57,47 @@ th {
 .tabcontent {
     display: none;
 }
+#extra {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    font-size: 15px;
+}
+#extra:hover {
+    background-color: #ddd;
+}
+#Invasive, #Endangered, #Environmental{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+#Info{
+    text-align: center;
+}
+span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+html {
+    scroll-behavior: smooth;
+}
+.TButton {
+    border: none;
+    background-color: inherit;
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+}
+.TImg {
+    display: none;
+    width: 100%;
+}
 </style>
 <body>
 <div id="title">
-<h1 class="center">Central Africa</h1>
-<h3 class="center">By Kyle Bell</h3>
+<h1 id="CAfrica" class="center">Central Africa</h1>
+<button onclick="openTab('Info')" id="extra">Extra Information</button>
+<br>
 <img id="africa" src="https://www.google.com/maps/vt/data=AiHMErhfcKu6k8USblqeceIgEGU-CIjG81HF9CvjbBDy_sImt0DbcJ6laEs2NM9II0eEWe_QGHXA7w4OGPqKESp1E7Z90zHe5nWhSLsmMtXOkRgfgQZGr6KMj3ix6TAiPKEA_71g_XH5Y8g6arFEQsa6cFRDUQMtUBwnAzqu8-lpW-aaJM5QYDAzhurvSuRqd58UuN6Zovkt8jet9WQetx7hkPqAkAZd0ovfXyY5GmjzJNeC2bcDmuXc" style="width:40%;">
 <br>
 </div>
@@ -69,33 +109,35 @@ th {
 </div>
 <div id="Ecosystem" class="tabcontent">
 <h1 class="center">Ecosystem</h1>
-<p class="center">Central Africa consists mainly of tropical rain forests and swamps. It is located in the area along the equator in the center of Africa</p>
+<p class="center" style="font-size: 25px">Central Africa consists mainly of tropical rain forests and swamps.</p>
+<p class="center" style="font-size: 25px"> It is located in the area along the equator in the center of Africa</p>
 <table class="tbl">
     <tr>
-        <th style="width:50%">Plants</th>
-        <th style="width:50%">Animals</th>
+        <th style="width:50%"><button onclick="openall()" class="TButton" style="font-weight: bold">Plants</button></th>
+        <th style="width:50%"><button onclick="openall()" class="TButton" style="font-weight: bold">Animals</button></th>
     </tr>
     <tr>
-        <td>Mahogany</td>
-        <td>Forest Elephant</td>
+        <td><img id="Mahogany" src="Mahogany.jpg" class="TImg"><button onclick="openimg('Mahogany')" class="TButton">Mahogany Tree</button></td>
+        <td><img id="ForestElephant" src="ForestElephant.jpg" class="TImg"><button onclick="openimg('ForestElephant')" class="TButton">Forest Elephant</button></td>
     </tr>
     <tr>
-        <td>Ebony</td>
-        <td>Chimpanze</td>
+        <td><img id="Ebony" src="Ebony.jpg" class="TImg"><button onclick="openimg('Ebony')" class="TButton">Ebony Tree</button></td>
+        <td><img id="Chimpanzee" src="Chimpanzee.jpg" class="TImg"><button onclick="openimg('Chimpanzee')" class="TButton">Chimpanzee</button></td>
     </tr>
     <tr>
-        <td>Sisal</td>
-        <td>Bonobo</td>
+        <td><img id="Sisal" src="Sisal.jpg" class="TImg"><button onclick="openimg('Sisal')" class="TButton">Sisal</button></td>
+        <td><img id="Bonobo" src="Bonobo.jpg" class="TImg"><button onclick="openimg('Bonobo')" class="TButton">Bonobo</button></td>
     </tr>
     <tr>
-        <td>Raffia</td>
-        <td>Mountain Gorrila</td>
+        <td><img id="Raffia" src="Raffia.jpg" class="TImg"><button onclick="openimg('Raffia')" class="TButton">Raffia</button></td>
+        <td><img id="MountainGorilla" src="MountainGorilla.jpg" class="TImg"><button onclick="openimg('MountainGorilla')" class="TButton">Mountain Gorilla</button></td>
     </tr>
     <tr>
-        <td>Rubber Tree</td>
-        <td>Leopard</td>
+        <td><img id="RubberTree" src="RubberTree.jpg" class="TImg"><button onclick="openimg('RubberTree')" class="TButton">Rubber Tree</button></td>
+        <td><img id="Leopard" src="Leopard.jpg" class="TImg"><button onclick="openimg('Leopard')" class="TButton">Leopard</button></td>
     </tr>
 </table>
+<p style="color: red" class="center">Click Names to see images!</p>
 <br>
 <br>
 <table class="tbl">
@@ -104,12 +146,12 @@ th {
         <th style="width:50%">Non-Renewable Resources</th>
     </tr>
     <tr>
-        <td>Wood</td>
-        <td>Oil</td>
+        <td><img id="Wood" src="Wood.jpg" class="TImg"><button onclick="openimg('Wood')" class="TButton">Wood</button></td>
+        <td><img id="Oil" src="Oil.jpg" class="TImg"><button onclick="openimg('Oil')" class="TButton">Oil</button></td>
     </tr>
     <tr>
-        <td>Palm Oil</td>
-        <td>Diamond</td>
+        <td><img id="PalmOil" src="PalmOil.jpg" class="TImg"><button onclick="openimg('PalmOil')" class="TButton">Palm Oil</button></td>
+        <td><img id="Diamond" src="Diamond.jpg" class="TImg"><button onclick="openimg('Diamond')" class="TButton">Diamond</button></td>
     </tr>
 </table>
 <br>
@@ -130,40 +172,62 @@ th {
         <td>Floods, Droughts, Volcanic activity</td>
     </tr>
 </table>
-<h2 class="center">Biodiversity</h2>
-<p class="center">10,000 species - Large Biodiversity</p>
+<h1 class="center">Biodiversity</h1>
+<p class="center" style="font-size: 25px">10,000 species - Large Biodiversity</p>
 </div>
 <div id="Invasive" class="tabcontent">
-<p>Street Name: Unknown</p>
-<p>Alias: Sericostachys scandens</p>
-<p>Hide-out: Democratic Republic of Congo</p>
-<p>Criminal on the Loose: 1990</p>
-<p>Original Loaction: Central Africa</p>
-<p>Vicitms: Gorillas</p>
-<p>Effect: Altered forest composition and suitable habitat</p>
-<p>Catching Criminal: Try to remove as much as possible and lock into one location</p>
+<h1 class="center">Invasive Species</h1>
+<ul>
+<li><span>Street Name:</span>Unknown</li>
+<li><span>Alias:</span> Sericostachys scandens</li>
+<li><span>Hide-out:</span> Democratic Republic of Congo</li>
+<li><span>Criminal on the Loose:</span> 1990</li>
+<li><span>Original Location:</span> Central Africa</li>
+<li><span>Vicitms:</span> Gorillas</li>
+<li><span>Effect:</span> Altered forest composition and suitable habitat</li>
+<li><span>Catching Criminal:</span> Try to remove as much as possible and isolate into one location</li>
+</ul>
 </div>
 <div id="Endangered" class="tabcontent">
-<p>Endangered Species: Slender-Snouted Crocodile</p>
-<p>Status: Critically Endangered</p>
-<p>Cause: Human disturbance and hunting</p>
-<p>Extinction Impact: Overpopulation of fish. Otters, Leopards, and birds would decline in population</p>
+<h1 class="center">Endangered Species</h1>
+<ul>
+<li><span>Endangered Species:</span> Slender-Snouted Crocodile</li>
+<li><span>Status:</span> Critically Endangered</li>
+<li><span>Cause:</span> Human disturbance and hunting</li>
+<li><span>Extinction Impact:</span> Overpopulation of fish. Otters, Leopards, and birds would decline in population</li>
+</ul>
 </div>
 <div id="Environmental" class="tabcontent">
-<p>Environmental Issue: Deforestation</p>
-<p>Cause: Illegal logging</p>
-<p>Issue Management: Implementing responsible forest management models</p>
-<p>Problems with Solution: Not always able to enforce these models</p>
-<p>Issue Communication: The issue of deforestation is widely known, but deforestation specifically in the Congo doesn't get much attention</p>
+<h1 class="center">Environmental Issues</h1>
+<ul>
+<li><span>Environmental Issue:</span> Deforestation</li>
+<li><span>Cause:</span> Illegal logging</li>
+<li><span>Issue Management:</span> Implementing responsible forest management models</li>
+<li><span>Problems with Solution:</span> Not always able to enforce these models</li>
+<li><span>Issue Communication:</span> The issue of deforestation is widely known, but deforestation specifically in the Congo doesn't get much attention</li>
+</ul>
+<div id="Info" class="tabcontent">
+<h1>Made by Kyle Bell</h1>
 </div>
 <script>
 function openTab(tabname) {
     var i, tabcontent
     tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i <tabcontent.length; i++) {
+    for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none"
     }
     document.getElementById(tabname).style.display = "block";
+    document.getElementById(tabname).scrollIntoView();
+}
+function openimg(imgname) {
+    document.getElementById(imgname).style.display = "block";
+}
+function openall() {
+    var i, images
+    images = document.getElementsByClassName("TImg");
+    for(i = 0; i < images.length; i++) {
+        images[i].style.display = "block"
+    }
 }
 </script>
 </body>
